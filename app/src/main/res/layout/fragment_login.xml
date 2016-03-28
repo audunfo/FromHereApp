@@ -1,17 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:gravity="center_horizontal|center_vertical"
+    android:gravity="center_horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher"
+        />
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:gravity="center_horizontal"
+        android:textSize="25sp"
+        android:text="@string/login_app_title"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/login_app_text"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/colorMetaGrey"
+        />
+
+    <Button
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="50dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:drawableStart="@drawable/instagram_logo_24_24"
+        android:drawableLeft="@drawable/instagram_logo_24_24"
+        android:text="@string/title_login_instagram"
         android:textSize="20sp"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
         />
 
 </LinearLayout>
