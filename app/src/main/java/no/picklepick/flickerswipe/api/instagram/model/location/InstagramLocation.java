@@ -2,12 +2,14 @@ package no.picklepick.flickerswipe.api.instagram.model.location;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Instagram model for location.
  *
  * @author Audun Follegg (audunfo@gmail.com)
  */
-public class Location {
+public class InstagramLocation implements Serializable{
 
     @SerializedName("street_address")
     private String streetAddress;

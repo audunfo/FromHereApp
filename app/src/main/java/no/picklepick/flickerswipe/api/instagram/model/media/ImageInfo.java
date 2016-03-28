@@ -1,11 +1,13 @@
 package no.picklepick.flickerswipe.api.instagram.model.media;
 
+import java.io.Serializable;
+
 /**
  * Info for instagram image.
  *
  * @author Audun Follegg (audunfo@gmail.com)
  */
-public class ImageInfo {
+public class ImageInfo implements Serializable{
 
     private String url;
     private Integer width;
