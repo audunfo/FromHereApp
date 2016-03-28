@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 
-import no.picklepick.flickerswipe.api.instagram.model.location.Location;
+import no.picklepick.flickerswipe.api.instagram.model.location.InstagramLocation;
 import no.picklepick.flickerswipe.api.instagram.model.user.User;
 
 /**
@@ -17,7 +17,7 @@ import no.picklepick.flickerswipe.api.instagram.model.user.User;
 public class Media implements Serializable{
 
     @SerializedName("id")
-    private Long id;
+    private String id;
 
     @SerializedName("type")
     private String type;
@@ -31,8 +31,8 @@ public class Media implements Serializable{
     @SerializedName("user")
     private User user;
 
-    @SerializedName("location")
-    private Location location;
+    @SerializedName("instagramLocation")
+    private InstagramLocation instagramLocation;
 
     public String getType() {
         return type;
@@ -50,11 +50,11 @@ public class Media implements Serializable{
         return user;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public Location getLocation() {
-        return location;
+    public InstagramLocation getInstagramLocation() {
+        return instagramLocation;
     }
 }
