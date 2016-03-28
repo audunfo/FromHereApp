@@ -1,8 +1,22 @@
 <resources>
-    <string name="app_name">InstaSwipe</string>
+    <string name="app_name">FromHere</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+    <string name="action_logout">Sign out</string>
+    <string name="button_title_find_images_near_me">Find images near me!</string>
+
+
+    <!--LOGIN-->
+    <string name="login_app_title">FromHere</string>
+    <string name="login_app_text">Discover cool images \n from your neighbourhood</string>
+    <string name="title_login_instagram">Login with Instagram</string>
+
+    <!-- DIALOGS-->
+    <string name="dialog_error_get_locations">Error getting locations</string>
+    <string name="dialog_error_get_images">Error getting images from Instagram</string>
+    <string name="dialog_error_get_images_location">Sorry, no images available for your location</string>
+    <string name="dialog_title_loading">Loading</string>
+    <string name="dialog_error_http_error">Network error, check connectivity</string>
 </resources>
