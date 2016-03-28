@@ -1,15 +1,11 @@
 package no.picklepick.flickerswipe.authentication;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.util.AttributeSet;
-import android.view.View;
 
-import no.picklepick.flickerswipe.MainActivity;
+import no.picklepick.flickerswipe.NavigationActivity;
 import no.picklepick.flickerswipe.R;
 import no.picklepick.flickerswipe.authentication.fragments.LoginFragment;
 import no.picklepick.flickerswipe.common.DatabaseManager;
@@ -19,7 +15,7 @@ import no.picklepick.flickerswipe.common.DatabaseManager;
  *
  * @author Audun Follegg (audunfo@gmail.com)
  */
-public class AuthenticateActivity extends AppCompatActivity {
+public class AuthenticateActivity extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,20 +23,19 @@ public class AuthenticateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_authentication);
 
         checkAuthentication();
+
     }
 
-    private void checkAuthentication(){
+    private void checkAuthentication() {
         String token = DatabaseManager.getInstance().getToken(this);
-        if(token != null){
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
-        }
-        else goToLogin();
+        if (token != null) {
+            startActivity(new Intent(this, NavigationActivity.class));
+            /*finish();*/
+        } else goToLoginPage();
     }
 
-    private void goToLogin(){
-        getSupportFragmentManager()
-                .beginTransaction()
+    private void goToLoginPage() {
+        getFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, new LoginFragment())
                 .commit();
     }
