@@ -43,6 +43,25 @@ public class DatabaseManager {
     }
 
     /**
+     * Delete instagram access token.
+     *
+     * @param context sender context.
+     */
+    public void deleteToken(Context context) {
+        try {
+            DB db = DBFactory.open(context, DB_NAME);
+            // Save token.
+            if (db.exists(TOKEN_KEY)) {
+                db.del(TOKEN_KEY);
+            }
+
+            db.close();
+        } catch (SnappydbException e) {
+            throw new RuntimeException("Error deleting token", e);
+        }
+    }
+
+    /**
      * GET instagram access token.
      *
      * @param context sender context
@@ -51,8 +70,9 @@ public class DatabaseManager {
     public String getToken(Context context) {
         try {
             DB db = DBFactory.open(context, DB_NAME);
+
             // Get token
-            String token = db.getObject(TOKEN_KEY, String.class);
+            String token = db.get(TOKEN_KEY);
             db.close();
 
             return token;
@@ -60,6 +80,4 @@ public class DatabaseManager {
             return null;
         }
     }
-
-
 }
