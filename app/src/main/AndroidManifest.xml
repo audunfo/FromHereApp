@@ -2,10 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="no.picklepick.flickerswipe">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -19,14 +21,16 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".images.ListDataActivity"
-            android:excludeFromRecents="true"
-            android:taskAffinity=""
-            android:theme="@style/Theme.Sliding.Light"/>
+        <activity android:name=".common.BaseSlideActivity"
+            android:exported="false"/>
 
-        <activity android:name=".common.BaseSlideActivity" android:exported="false"/>
-        <activity android:name=".MainActivity" android:exported="false"/>
+        <activity android:name=".images.ListMediaActivity"
+            android:theme="@style/AppTheme.NoActionBarOrWindow"/>
+
+        <activity android:name=".NavigationActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
 
     </application>
 
