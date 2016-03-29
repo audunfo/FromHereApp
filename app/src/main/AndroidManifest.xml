@@ -21,9 +21,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".common.BaseSlideActivity"
-            android:exported="false"/>
-
         <activity android:name=".images.ListMediaActivity"
             android:theme="@style/AppTheme.NoActionBarOrWindow"/>
 
