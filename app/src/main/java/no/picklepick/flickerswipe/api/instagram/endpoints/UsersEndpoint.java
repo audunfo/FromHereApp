@@ -1,12 +1,13 @@
 package no.picklepick.flickerswipe.api.instagram.endpoints;
 
-import no.picklepick.flickerswipe.api.instagram.model.media.Media;
-import no.picklepick.flickerswipe.api.instagram.model.user.User;
-import no.picklepick.flickerswipe.api.instagram.model.ObjectResponse;
 import no.picklepick.flickerswipe.api.instagram.model.ListResponse;
+import no.picklepick.flickerswipe.api.instagram.model.ObjectResponse;
+import no.picklepick.flickerswipe.api.instagram.model.media.Media;
 import no.picklepick.flickerswipe.api.instagram.model.user.SearchUser;
+import no.picklepick.flickerswipe.api.instagram.model.user.User;
 import retrofit.Call;
 import retrofit.http.GET;
+import retrofit.http.Query;
 
 /**
  * Endpoint definition for Instagram /users endpoint.
@@ -16,7 +17,7 @@ import retrofit.http.GET;
 public interface UsersEndpoint {
 
     @GET("users/self")
-    Call<ObjectResponse<User>> getCurrentUser();
+    Call<ObjectResponse<User>> getCurrentUser(@Query("access_token") String accessToken);
 
     @GET("users/{userId}")
     Call<ObjectResponse<User>> getUserById();
@@ -26,6 +27,9 @@ public interface UsersEndpoint {
 
     @GET("users/{userId}/media/recent")
     Call<ListResponse<Media>> getRecentMediaForUser();
+
+    @GET("users/self/media/recent")
+    Call<ListResponse<Media>> getRecentMediaForCurrentUser(@Query("access_token") String accessToken);
 
 
 }
