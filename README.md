@@ -10,7 +10,10 @@ Get instagram images from your neighborhood.
 
 ## Recipe:
 - Get source code: git clone https://github.com/audunfo/FromHereApp
-- Open project in 
+- Open Android studio
+- Choose "File" -> "Open" -> and choose the directory where you cloned the source code
+- Wait for Gradle sync to complete
+- Connect your device and hit RUN in Android Studio
 
 
 
